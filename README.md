@@ -1,2 +1,2 @@
-# portfolio
+# Portfolio
 Created a Portfolio using Next.js, tailwind and sanity CMS
