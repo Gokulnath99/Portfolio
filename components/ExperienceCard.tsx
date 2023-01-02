@@ -24,7 +24,7 @@ function ExperienceCard({}: Props) {
         viewport={{
           once: true
         }}
-      className='w-20 h-20 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center' 
+      className='w-24 h-24 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center' 
       src={companylogo.src}
       alt="company logo"/>
 
