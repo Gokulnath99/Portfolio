@@ -1,45 +1,70 @@
 import React from "react";
 import { motion } from "framer-motion";
 import aboutpic from "../assets/about.jpg"
+import { bios } from '../assets/data';
 
 type Props = {};
 
 function About({}: Props) {
   return (
-    <motion.div 
-    initial={{ opacity: 0}}
-    whileInView={{ opacity: 1}}
-    transition={{ duration: 1.5}}
-    className="flex flex-col relative h-screen text-center md:text-left
-              md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-[#F5B553] text-2xl">
-        About
-      </h3>
-      <motion.img
-        initial={{
-            x: -200,
-            opacity: 0
-        }}
-        transition={{
-          duration: 1.2,
-        }}
-        whileInView={{
-            x: 0,
-            opacity: 1,
-        }}
-        viewport={{ once:true }}
-        src= {aboutpic.src}
-        alt="picture"
-        className="-mb-20 mt-10 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover
-        md:rounded-lg md:w-64 md:h-64 xl:w-[300px] xl:h-[400px]"
-      />
-      <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold"> 
-          Here is a <span className="underline decoration-[#B68D40]">little</span> background 
-        </h4>
-        <p className="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt harum laborum magnam eos atque expedita, in maxime alias nesciunt soluta sit odit repellat dicta hic asperiores voluptatibus voluptatum adipisci?</p>
+    <div className="container">
+      <motion.div 
+      initial={{ opacity: 0}}
+      whileInView={{ opacity: 1}}
+      transition={{ duration: 1.5}}
+      className="title">
+        <p>who am I?</p>
+        <h1>About Me</h1>
+      </motion.div>
+
+
+      <div className="about_container">
+        <motion.div
+            initial={{ x: 0, opacity: 0 }}
+            whileInView={{ x: [-250, 0], opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="about_left">
+          <motion.img
+            initial={{
+                x: -200,
+                opacity: 0
+            }}
+            transition={{
+              duration: 1.2,
+            }}
+            whileInView={{
+                x: 0,
+                opacity: 1,
+            }}
+            viewport={{ once:true }}
+            src= {aboutpic.src}
+            alt="picture"
+          />
+        </motion.div>
+
+        <motion.div className="about_right"
+          initial={{ x: 0, opacity: 0 }}
+          whileInView={{ x: [250, 0], opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae at rem, tenetur ad ipsa sequi, optio eius laudantium vero minus maxime laborum est et nemo consequatur nostrum distinctio sed, nulla doloribus officiis ea eligendi explicabo.</p>
+          {bios.map(bio => {
+            return (
+              <div className="bio" key={bio.id}>
+                <span className='bioKey'>{bio.icon}{bio.key}</span>
+                <span className='bioValue'>{bio.value}</span>
+              </div>
+            )
+          })}
+          <motion.a href='#' download=""
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+          >
+            Download Resume
+          </motion.a>
+        </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

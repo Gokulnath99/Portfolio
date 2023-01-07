@@ -3,13 +3,12 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import profilePic from "../assets/profile.jpg";
-import Link from "next/link";
 
 type Props = {};
 
 const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
-    words: ["Hello", "From", "Typewriter", "Hook!"],
+    words: ["I am Gokul", "I like coffe! "],
     loop: true,
     delaySpeed: 2000,
   });
@@ -29,20 +28,9 @@ const Hero = (props: Props) => {
           <span className="mr-1">{text}</span>
           <Cursor cursorColor="#F7AB0A" />
         </h1>
-        <div className="pt-10">
-          <Link href="#about">
-            <button className="heroButton">About</button>
-          </Link>
-          <Link href="#experience">
-            <button className="heroButton">Experience</button>
-          </Link>
-          <Link href="#skills">
-            <button className="heroButton">Skills</button>
-          </Link>
-          <Link href="#project">
-            <button className="heroButton">Project</button>
-          </Link>
-        </div>
+      </div>
+      <div>
+        Say Hi! 👋👋
       </div>
     </div>
   );
