@@ -140,7 +140,7 @@
 }
 
 
-/* project page */
+/* project section */
 @layer components {
 
   .buttons {
@@ -188,7 +188,7 @@
   }
 
   .talk .talk_left h3 span {
-    @apply  text-[#fff6d3] md:text-5xl sm:text-4xl text-2xl
+    @apply  text-[#fff6d3] md:text-5xl sm:text-4xl text-2xl capitalize
   }
 
   .talk .talk_right {
@@ -196,6 +196,62 @@
   }
 
   .talk .talk_right a {
+    @apply no-underline text-white capitalize
+  }
+
+}
+
+
+
+/* contact */
+@layer components {
+  
+  .contact_form{
+    @apply grid p-8 ml-auto mr-auto gap-8 overflow-hidden grid-cols-1 md:grid-cols-2 bg-[#fff] max-w-[1100px] rounded-2xl text-[#242424] 
+  }
+  .contact_form .contact_left_container h3{
+    @apply text-2xl mb-4  font-bold
+  }
+  .contact_form .contact_left_container .contact_text{
+    @apply text-sm mb-4 font-medium
+  }
+  .contact_form .contact_left_container .contact_left{
+    @apply flex items-center mt-4
+  }
+  .contact_form .contact_left_container .contact_left .icon{
+    @apply w-12 h-12 bg-[#ff9900] text-white flex justify-center items-center mr-4 rounded-full
+  }
+  .contact_form .contact_left_container .contact_left p{
+    @apply text-sm font-semibold
+  }
+  .contact_form .contact_left_container .social_icons{
+    @apply flex mt-4
+  }
+  .contact_form .contact_left_container .social_icons div{
+    @apply mr-4 cursor-pointer
+  }
+  .contact_form .contact_left_container .social_icons div:hover{
+    @apply opacity-80
+  }
+  .contact_form .contact_left_container .social_icons div svg{
+    @apply text-xl
+  }
+  .contact_form .contact_right h3{
+    @apply text-2xl mb-4
+  }
+  .contact_form .contact_right .row{
+    @apply w-full grid gap-2
+  }
+  .contact_form .contact_right .row input{
+    @apply mb-2 bg-gray-200 rounded text-sm p-[1rem_1.5rem]
+  }
+  .contact_form .contact_right .row textarea{
+    @apply mb-2 bg-gray-200 rounded resize-none text-sm p-[1rem_1.5rem] min-h-[150px]
+  }
+  .contact_form .contact_right .btn{
+    @apply mt-4 bg-[#ff9900] text-sm w-16 p-[0.65rem_1rem] rounded-xl
+  }
+  .contact_form .contact_right a{
     @apply no-underline text-white capitalize
   }
 

@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import SkillExp from "../components/SkillExp";
 import Projects from "../components/Projects";
+import Contact from "../components/Contact";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,9 @@ export default function Home() {
       </section>
       
       {/* contact me */}
+      <section id="project">
+        <Contact />
+      </section>
     </div>
   );
 }
