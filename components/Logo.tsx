@@ -19,7 +19,7 @@ function Logo({}: Props) {
     transition={{
         duration: 1.5
     }}
-    className='text-4xl'>
+    className='text-4xl text-[#ff9900]'>
         Logo
     </motion.div>
   )

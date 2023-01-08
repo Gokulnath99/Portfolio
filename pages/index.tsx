@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen md:snap-y md:snap-mandatory overflow-x-hidden overflow-y-scroll z-0">
+    <div className="bg-[rgb(36,36,36)] text-white h-screen overflow-x-hidden overflow-y-scroll z-0">
       <Head>
         <title>Gokul's Portfolio</title>
       </Head>
@@ -19,27 +19,22 @@ export default function Home() {
       <Header />
 
       {/* Hero */}
-      <section id="hero" className="snap-start">
+      <section id="hero">
         <Hero />
       </section>
 
       {/* About */}
-      <section id="about" className="snap-center">
+      <section id="about">
         <About />
       </section>
 
       {/* Experience */}
-      <section id="SkillExp" className="snap-center">
+      <section id="SkillExp">
         <SkillExp />
       </section>
 
-      {/* skills */}
-      {/* <section id="skills" className="snap-center">
-        <Skills />
-      </section> */}
-
       {/* project */}
-      <section id="project" className="snap-center">
+      <section id="project">
         <Projects />
       </section>
       
