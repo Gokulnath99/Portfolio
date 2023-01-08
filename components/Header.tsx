@@ -11,7 +11,7 @@ function Header({}: Props) {
     const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className='sticky z-20 p-5 top-0 flex items-center justify-between max-w-7xl mx-auto bg-[rgb(36,36,36)]'>
+    <header className='sticky z-50 p-5 top-0 flex items-center justify-between max-w-7xl mx-auto bg-[rgb(36,36,36)]'>
         {/* logo */}
         <Logo />
         

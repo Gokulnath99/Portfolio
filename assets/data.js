@@ -2,6 +2,12 @@ import { FaHtml5, FaCss3, FaNodeJs, FaReact, FaSass, FaFigma, FaPhoneAlt, FaUser
 import { DiJavascript } from "react-icons/di";
 import { SiTypescript } from "react-icons/si";
 import { BsMedium } from "react-icons/bs";
+import work1 from "./work1.png";
+import work2 from "./work2.png";
+import work3 from "./work3.png";
+import work4 from "./work4.png";
+import work5 from "./work5.png";
+import work6 from "./work6.png";
 
 export const navLinks = ["home", "about", "skills", "portfolio", "contact"]
 
@@ -75,6 +81,45 @@ export const finishes = [
     id: 4,
     number: "117+",
     itemName: "Clients Served"
+  }
+]
+
+export const workImages = [
+  {
+    id: 1,
+    img: work1.src,
+    name: "project 1",
+    category: "web"
+  },
+  {
+    id: 2,
+    img: work2.src,
+    name: "project 2",
+    category: "web"
+  },
+  {
+    id: 3,
+    img: work3.src,
+    name: "project 3",
+    category: "web"
+  },
+  {
+    id: 4,
+    img: work4.src,
+    name: "project 4",
+    category: "app"
+  },
+  {
+    id: 5,
+    img: work5.src,
+    name: "project 5",
+    category: 'app'
+  },
+  {
+    id: 6,
+    img: work6.src,
+    name: "project 6",
+    category: "design"
   }
 ]
 

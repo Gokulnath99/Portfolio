@@ -8,6 +8,38 @@
   }
 }
 
+
+/* common */
+@layer components {
+
+  .container {
+    @apply m-[0_auto]  p-[5rem_1rem_0_1rem] max-w-[1224px] min-h-screen md:p-[7rem_1.5rem_0_1.5rem]
+  }
+
+  .title {
+    @apply text-center my-12
+
+  }
+
+  .title p {
+    @apply md:text-center text-lg top-16 uppercase tracking-[5px] text-yellow-50
+  }
+
+  .title h1 {
+    @apply md:text-center top-24 uppercase tracking-[20px] text-[#F5B553] text-2xl
+  }
+
+  .active {
+    @apply  bg-[#F5B553] capitalize border hover:bg-[#F5B553] border-[#F5B553] self-center  w-32 h-auto md:self-start rounded-full text-black
+  }
+
+  .inactive {
+    @apply capitalize border hover:bg-[#F5B553] border-[#F5B553] self-center  w-32 h-auto md:self-start rounded-full 
+  }
+
+}
+
+/* header */
 @layer components {
   .heroButton {
     @apply px-6 py-2 border border-[#122620] rounded-full uppercase text-sm
@@ -16,28 +48,58 @@
   }
 }
 
+
+
+/* about page */
 @layer components {
-    .swipe {
-      @apply mt-28 w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory
+  .about_container {
+    @apply grid grid-cols-1 md:grid-cols-2 justify-items-center content-center relative md:min-h-[400px]
+  }
+  
+  .about_left {
+    @apply bg-[#F5B553] w-52 h-52 rounded-full object-cover 
+    justify-self-center md:rounded-lg md:w-80 md:h-64 xl:w-[300px] shadow-[0_0_16px_0_#F5B553]
+  }
+  
+  .about_left img {
+    @apply w-52 h-52 rounded-full object-cover 
+    justify-self-center md:rounded-lg md:w-80 md:h-64 xl:w-[300px] shadow-[0_0_16px_0_#F5B553]
+  }
+  
+  .about_right {
+    @apply md:p-4 p-0 md:mt-auto mt-8  flex flex-col
+  }
+  
+  .about_right p {
+    @apply text-sm mb-4 max-w-[450px]
+  }
+  
+  .about_right .bio {
+    @apply flex text-sm max-w-[200px] mb-4
+  }
+  
+  .about_right .bio .bioKey {
+    @apply flex items-center gap-2 mr-12
+  }
+  
+  .about_right a {
+    @apply no-underline border bg-[#F5B553] text-black font-semibold text-sm capitalize w-40 p-[0.65rem_1rem] rounded-full
+  }
+  
+}
 
-    }}
 
+
+/* skill and exp */
 @layer components {
   .select {
     @apply flex justify-center gap-4 mb-10
-  }
-
-  .active {
-    @apply  bg-[#F5B553] capitalize border hover:bg-[#F5B553] border-[#F5B553] self-center  w-32 h-auto md:self-start rounded-full 
-  }
-  .inactive {
-    @apply capitalize border hover:bg-[#F5B553] border-[#F5B553] self-center  w-32 h-auto md:self-start rounded-full 
   }
   .skills {
     @apply grid grid-cols-2 md:grid-cols-4 justify-items-center ml-auto mr-auto gap-y-5 max-w-[500px]
   }
   .tools {
-    @apply flex justify-center w-[100px] h-[100px] rounded-full
+    @apply flex  justify-center items-center w-[100px] h-[100px] rounded-full
   }
 
   .svg {
@@ -75,127 +137,66 @@
   .number {
     @apply text-[#F5B553] text-3xl
   }
-
-
-
 }
 
+
+/* project page */
 @layer components {
 
-  .container {
-    @apply m-[0_auto]  p-[5rem_1rem_0_1rem] max-w-[1224px] min-h-screen md:p-[7rem_1.5rem_0_1.5rem]
+  .buttons {
+    @apply flex justify-center gap-4 flex-wrap
   }
 
-  .title {
-    @apply text-center my-12
-
+  .buttons button {
+    @apply text-yellow-50 text-sm capitalize cursor-pointer mt-4 p-[0.65rem_1rem] rounded-xl
   }
 
-  .title p {
-    @apply md:text-center text-lg top-16 uppercase tracking-[5px] text-yellow-50
+  .buttons button.active {
+    @apply bg-[#F5B553] text-white
   }
-
-  .title h1 {
-    @apply md:text-center top-24 uppercase tracking-[20px] text-[#F5B553] text-2xl
-  }
-
-}
-
-@layer components {
-  .about_container {
-    @apply grid grid-cols-1 md:grid-cols-2 justify-items-center content-center relative md:min-h-[400px]
-  }
-
-  .about_left {
-    @apply bg-[#F5B553] w-52 h-52 rounded-full object-cover 
-    justify-self-center md:rounded-lg md:w-80 md:h-64 xl:w-[300px] shadow-[0_0_16px_0_#F5B553]
-  }
-
-  .about_left img {
-    @apply w-52 h-52 rounded-full object-cover 
-    justify-self-center md:rounded-lg md:w-80 md:h-64 xl:w-[300px] shadow-[0_0_16px_0_#F5B553]
-  }
-
-  .about_right {
-    @apply md:p-4 p-0 md:mt-auto mt-8  flex flex-col
-  }
-
-  .about_right p {
-    @apply text-sm mb-4 max-w-[450px]
-  }
-
-  .about_right .bio {
-    @apply flex text-sm max-w-[200px] mb-4
-  }
-
-  .about_right .bio .bioKey {
-    @apply flex items-center gap-2 mr-12
-  }
-
-  .about_right a {
-    @apply no-underline border bg-[#F5B553] text-black font-semibold text-sm capitalize w-40 p-[0.65rem_1rem] rounded-full
-  }
-
-
-
-}
-
-.scroll-behavior-smooth {
-  scroll-behavior: smooth;
-}
-
-.scroll-behavior-auto {
-  scroll-behavior: auto;
-}
-
-.scroll-behavior-instant {
-  scroll-behavior: instant;
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-.swiper-button-prev {
-  color: red; 
-}
-
-.swiper-button-next {
-  color: #000; 
-}
-
-  /* {
   
-    padding: 0.65rem 1rem;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    text-transform: capitalize;
-    cursor: pointer;
-    border: none;
-    margin-top: 1rem;
-    font-family: "Poppins";
-  
-    &.active {
-        background: #8c12f0;
-        color: #fff;
-    } */
+  .workImages {
+    @apply mt-20 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+  }
+
+  .workImages .workImage {
+    @apply h-64 ml-auto mr-auto relative max-w-[350px] md:max-w-[380px]
+  }
+
+  .workImages .workImage img {
+    @apply w-full h-full object-cover
+  }
+
+  .workImages .workImage .hoverLayer {
+    @apply bg-[#ffce84b6] w-full h-full absolute top-0 left-0 flex gap-6 justify-center items-center z-10
+  }
+
+  .workImages .workImage .hoverLayer a {
+    @apply w-10 h-10 flex justify-center items-center bg-[#1a190277] rounded-full
+  }
+
+  .workImages .workImage .hoverLayer a svg {
+    @apply text-white text-2xl
+  }
+
+  .talk {
+    @apply mt-12 flex justify-between items-center p-4 rounded ml-auto mr-auto flex-wrap gap-4 bg-[#ff9900] max-w-[700px]
+  }
+
+  .talk .talk_left h3 {
+    @apply text-2xl text-[#242424]
+  }
+
+  .talk .talk_left h3 span {
+    @apply  text-[#fff6d3] md:text-5xl sm:text-4xl text-2xl
+  }
+
+  .talk .talk_right {
+    @apply self-end mb-6 bg-[#242424] text-sm p-[0.65rem_1rem] rounded-xl text-[#ffd284] font-semibold
+  }
+
+  .talk .talk_right a {
+    @apply no-underline text-white capitalize
+  }
+
+}
