@@ -8,7 +8,7 @@ type Props = {}
 function Experience({}: Props) {
   const [active, setActive] = useState(1)
   return (
-    <div className="container" id="skills">
+    <div className="container" id="skillexp">
       <motion.div
         initial={{opacity: 0}}
         whileInView={{y: [-50, 0], opacity: 1}}  
