@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth bg-[rgb(36,36,36)];
   }
 }
 
@@ -13,7 +13,7 @@
 @layer components {
 
   .container {
-    @apply m-[0_auto]  p-[5rem_1rem_0_1rem] max-w-[1224px] min-h-screen md:p-[7rem_1.5rem_0_1.5rem]
+    @apply m-[0_auto]  p-[5rem_1rem_0_1rem] max-w-[1224px] min-h-screen md:p-[7rem_1.5rem_0_1.5rem] overflow-hidden
   }
 
   .title {
@@ -46,6 +46,67 @@
         tracking-widest text-[#F5B553] transition-all hover:border-[#B68D40]/40
         hover:text-[#D6AD60]/40;
   }
+
+  .header{
+    @apply md:fixed fixed w-full top-0 left-0 z-50
+  }
+  .header.active{
+    @apply bg-transparent backdrop-blur-md border border-transparent rounded-none
+  }
+  .Nav_container{
+    @apply relative flex justify-between items-center ml-auto mr-auto max-w-[1224px] p-[1.2rem_2rem]
+  }
+  .Nav_container .logo{
+    @apply w-10 h-10 flex items-center justify-center cursor-pointer text-4xl text-[#ff9900] rounded-full
+  }
+  .Nav_container .social_icons{
+    @apply md:flex hidden
+  }
+  .Nav_container .social_icons div{
+    @apply ml-4
+  }
+  .Nav_container .social_icons div svg{
+    @apply cursor-pointer text-white opacity-60 transition duration-300 z-50
+  }
+  .Nav_container .social_icons div svg:hover{
+    @apply opacity-100
+  }
+  .Nav_container .menu{
+    @apply w-8 h-8 relative md:hidden items-center justify-center cursor-pointer bg-[#ff9900] rounded-full flex
+  }
+  .Nav_container .menu svg{
+    @apply w-3/4 h-3/4
+  }
+  .Nav_container .closeMenu{
+    @apply w-16 h-16 fixed right-0 top-0 bg-[#000] rounded-full
+  }
+  .Nav_container .menuX{
+    @apply text-white fixed left-0 w-full flex items-center justify-center flex-col h-screen top-8
+  }
+  .Nav_container .menuX svg{
+    @apply cursor-pointer w-6 h-6 absolute top-8 right-20
+  }
+  .Nav_container .menuX li{
+    @apply mt-4 list-none
+  }
+  .Nav_container .menuX li a{
+    @apply no-underline uppercase text-white text-2xl opacity-60 ease-in
+  }
+  .Nav_container .menuX li a:hover{
+    @apply opacity-100
+  }
+  .nav_links{
+    @apply md:flex hidden
+  }
+  .nav_links li{
+    @apply ml-12 list-none
+  }
+  .nav_links li a{
+    @apply no-underline text-white uppercase text-sm duration-300 opacity-60
+  }
+  .nav_links li a:hover{
+    @apply opacity-100
+  }
 }
 
 
@@ -53,17 +114,17 @@
 /* about page */
 @layer components {
   .about_container {
-    @apply grid grid-cols-1 md:grid-cols-2 justify-items-center content-center relative md:min-h-[400px]
+    @apply grid grid-cols-1 md:grid-cols-2 justify-items-center content-center relative md:min-h-[500px]
   }
   
   .about_left {
     @apply bg-[#F5B553] w-52 h-52 rounded-full object-cover 
-    justify-self-center md:rounded-lg md:w-80 md:h-64 xl:w-[300px] shadow-[0_0_16px_0_#F5B553]
+    justify-self-center md:rounded-lg md:w-80 md:h-96 xl:w-[300px] shadow-[0_0_16px_0_#F5B553]
   }
   
   .about_left img {
     @apply w-52 h-52 rounded-full object-cover 
-    justify-self-center md:rounded-lg md:w-80 md:h-64 xl:w-[300px] shadow-[0_0_16px_0_#F5B553]
+    justify-self-center md:rounded-lg md:w-96 md:h-96 xl:w-[300px] shadow-[0_0_16px_0_#F5B553]
   }
   
   .about_right {

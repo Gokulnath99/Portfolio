@@ -6,21 +6,23 @@ import About from "../components/About";
 import SkillExp from "../components/SkillExp";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import Navbar from "../components/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen overflow-x-hidden overflow-y-scroll z-0">
+    <div className="text-white h-screen z-0">
       <Head>
         <title>Gokul's Portfolio</title>
       </Head>
 
       {/* Header */}
-      <Header />
+      {/* <Header /> */}
+      <Navbar />
 
       {/* Hero */}
-      <section id="hero">
+      <section id="home">
         <Hero />
       </section>
 
@@ -30,12 +32,12 @@ export default function Home() {
       </section>
 
       {/* Experience */}
-      <section id="SkillExp">
+      <section id="skills">
         <SkillExp />
       </section>
 
       {/* project */}
-      <section id="project">
+      <section id="portfolio">
         <Projects />
       </section>
       

@@ -34,14 +34,14 @@ function Header({}: Props) {
           <Link href='#about'>
             <button className="heroButton">About</button>
           </Link>
-          <Link href='#SkillExp'>
-            <button className="heroButton">Experience</button>
-          </Link>
-          <Link href='#SkillExp'>
+          <Link href='#skillexp'>
             <button className="heroButton">Skills</button>
           </Link>
           <Link href='#project'>
             <button className="heroButton">Project</button>
+          </Link>
+          <Link href='#contact'>
+            <button className="heroButton">Contact</button>
           </Link>
         </motion.div>
         
