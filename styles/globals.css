@@ -54,7 +54,7 @@
     @apply bg-transparent backdrop-blur-md border border-transparent rounded-none
   }
   .Nav_container{
-    @apply relative flex justify-between items-center ml-auto mr-auto max-w-[1224px] p-[1.2rem_2rem]
+    @apply relative flex justify-between items-center ml-auto mr-auto max-w-[1224px] p-[1.2rem_2rem] 
   }
   .Nav_container .logo{
     @apply w-10 h-10 flex items-center justify-center cursor-pointer text-4xl text-[#ff9900] rounded-full
@@ -102,7 +102,7 @@
     @apply ml-12 list-none
   }
   .nav_links li a{
-    @apply no-underline text-white uppercase text-sm duration-300 opacity-60
+    @apply no-underline text-white uppercase text-sm duration-300 opacity-60 text-[#F5B553]
   }
   .nav_links li a:hover{
     @apply opacity-100
@@ -118,8 +118,8 @@
   }
   
   .about_left {
-    @apply bg-[#F5B553] w-52 h-52 rounded-full object-cover 
-    justify-self-center md:rounded-lg md:w-80 md:h-96 xl:w-[300px] shadow-[0_0_16px_0_#F5B553]
+    @apply w-52 h-52 rounded-full object-cover 
+    justify-self-center md:rounded-lg md:w-80 md:h-96 xl:w-[300px]
   }
   
   .about_left img {
@@ -144,7 +144,7 @@
   }
   
   .about_right a {
-    @apply no-underline border bg-[#F5B553] text-black font-semibold text-sm capitalize w-40 p-[0.65rem_1rem] rounded-full
+    @apply no-underline bg-[#F5B553] text-black font-semibold text-sm capitalize w-40 p-[0.65rem_1rem] rounded-full
   }
   
 }
@@ -316,4 +316,38 @@
     @apply no-underline text-white capitalize
   }
 
+}
+
+
+
+/* footer */
+@layer components {
+
+  .footer{
+    @apply flex justify-between items-center flex-wrap ml-auto mr-auto text-white gap-8 p-[1rem_3rem] max-w-[800px]
+  }
+  .footer .copyright p{
+    @apply text-sm
+  }
+  .footer .copyright p span{
+    @apply text-[#ff9900] font-extrabold
+  }
+  .footer .followMe{
+    @apply flex items-center gap-4
+  }
+  .footer .followMe h4{
+    @apply text-sm
+  }
+  .footer .followMe .stick{
+    @apply h-px w-12 bg-[#fff]
+  }
+  .footer .followMe .social_icons{
+    @apply flex gap-2
+  }
+  .footer .followMe .social_icons svg{
+    @apply cursor-pointer opacity-70
+  }
+  .footer .followMe .social_icons svg:hover{
+    @apply opacity-100
+  }
 }

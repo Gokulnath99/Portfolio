@@ -2,8 +2,27 @@ import React from 'react';
 import { contacts } from '../assets/data';
 import { socialIcons } from '../assets/data';
 import { motion } from 'framer-motion';
+import { SubmitHandler, useForm } from "react-hook-form";
+
+type Inputs = {
+  firstname: string;
+  lastname: string;
+  phone: number;
+  email: string;
+  message: string;
+}
 
 const Contact = () => {
+
+  const { 
+    register, 
+    handleSubmit,
+  } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = formData => {
+    window.location.href = `mailto:gokulnathanand23@gmail?subject="reaching out from your profile page"&body=${formData.message}`;
+  }
+
   return (
     <div className="container" id="contact">
       <motion.div
@@ -42,33 +61,33 @@ const Contact = () => {
           })}
           </div>
         </motion.div>
-        <motion.div
+        <motion.form
           initial={{x: 0, opacity: 0}}
           whileInView={{ x: [150,0], opacity: 1 }}
           transition={{duration: 1}}
           className="contact_right"
-        
+          onSubmit={handleSubmit(onSubmit)}
         >
           <h3>Get In Touch</h3>
           <div className="row">
-            <input type="text" placeholder='First Name' />
-            <input type="text" placeholder='Last name'/>
+            <input {...register('firstname')} type="text" placeholder='First Name' />
+            <input {...register('lastname')} type="text" placeholder='Last name'/>
           </div>
           <div className="row">
-            <input type="text" placeholder='Phone' />
-            <input type="email" placeholder='Email' />
+            <input {...register('phone')} type="number" placeholder='Phone' />
+            <input {...register('email')} type="email" placeholder='Email' />
           </div>
           <div className="row">
-            <textarea placeholder='message'></textarea>
+            <textarea {...register('message')} placeholder='message'></textarea>
           </div>
-          <motion.div
+          <motion.button
             whileHover={{ scale: 1.1 }}
             transition={{duration: 0.3}}
             className="btn"
           >
-            <a href="#">Send</a>
-          </motion.div>
-        </motion.div>
+            Send
+          </motion.button>
+        </motion.form>
       </div>
     </div>
   )

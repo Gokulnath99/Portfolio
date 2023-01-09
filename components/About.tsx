@@ -20,17 +20,17 @@ function About({}: Props) {
 
       <div className="about_container">
         <motion.div
-            initial={{ x: 0, opacity: 0 }}
-            whileInView={{ x: [-250, 0], opacity: 1 }}
-            transition={{ duration: 1 }}
+            initial={{ x: -250, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 2 }}
             className="about_left">
           <motion.img
             initial={{
-                x: -200,
+                x: -250,
                 opacity: 0
             }}
             transition={{
-              duration: 1.2,
+              duration: 1,
             }}
             whileInView={{
                 x: 0,
