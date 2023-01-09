@@ -7,18 +7,17 @@ import SkillExp from "../components/SkillExp";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Navbar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="text-white h-screen z-0">
+    <div className="text-white h-screen z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f5b453cd]">
       <Head>
         <title>Gokul's Portfolio</title>
       </Head>
 
-      {/* Header */}
-      {/* <Header /> */}
       <Navbar />
 
       {/* Hero */}
@@ -45,6 +44,8 @@ export default function Home() {
       <section id="project">
         <Contact />
       </section>
+
+      <Footer />
     </div>
   );
 }

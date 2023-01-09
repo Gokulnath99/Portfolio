@@ -19,5 +19,5 @@ module.exports = {
   variants: {
     scrollBehavior: ['responsive'],
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 }
