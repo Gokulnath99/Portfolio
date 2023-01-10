@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import SkillExp from "../components/SkillExp";
@@ -13,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="text-white h-screen z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f5b453cd]">
+    <div className="text-white h-screen z-0">
       <Head>
         <title>Gokul's Portfolio</title>
       </Head>
