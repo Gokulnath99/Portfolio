@@ -48,7 +48,7 @@
   }
 
   .header{
-    @apply md:fixed fixed w-full top-0 left-0 z-50
+    @apply fixed w-full top-0 left-0 z-50 
   }
   .header.active{
     @apply bg-transparent backdrop-blur-md border border-transparent rounded-none
