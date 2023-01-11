@@ -26,7 +26,7 @@ export default defineType({
     defineType({
       name: 'phoneNumber',
       title: 'PhoneNumber',
-      type: 'number'
+      type: 'string'
     }),
     defineType({
       name: 'email',
