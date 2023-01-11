@@ -7,17 +7,32 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { Experience, PageInfo, Project, Skills, Socials } from "../typings";
+import { GetStaticProps } from "next";
+import { fetchPageInfo } from "../utils/fetchPageInfo";
+import { fetchSocials } from "../utils/fetchSocials";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchExperience } from "../utils/fetchExperience";
+import { fetchProjects } from "../utils/fetchPojects";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+type Props = {
+  pageInfo: PageInfo;
+  experience: Experience[];
+  skills: Skills[];
+  projects: Project[];
+  socials: Socials[];
+}
+
+export default function Home({pageInfo, experience, skills, projects, socials }: Props) {
   return (
     <div className="text-white h-screen z-0">
       <Head>
         <title>Gokul's Portfolio</title>
       </Head>
 
-      <Navbar />
+      <Navbar socials={socials} />
 
       {/* Hero */}
       <section id="home">
@@ -47,4 +62,25 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+
+export const getStaticProps: GetStaticProps<Props>  = async() => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const socials: Socials[] = await fetchSocials();
+  const skills: Skills[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const experience: Experience[] = await fetchExperience();
+
+  return {
+    props: {
+      pageInfo,
+      socials,
+      skills,
+      projects,
+      experience
+    },
+
+    revalidate: 10,
+  }
 }

@@ -4,7 +4,14 @@ import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { navLinks } from '../assets/data';
 import { socialIcons } from '../assets/data';
 import Logo from './Logo';
-const Navbar = () => {
+import { Socials } from '../typings';
+
+
+type Props = {
+    socials: Socials[]
+}
+
+const Navbar = ({ socials }: Props) => {
     
     const [scroll, setScroll] = useState(false);
     const [toggle, setToggle] = useState(false)
