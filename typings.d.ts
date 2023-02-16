@@ -23,7 +23,8 @@ interface File {
 }
 
 export interface PageInfo extends SanityBody {
-    _type:pageInfo;
+    _type: pageInfo;
+    AboutPage: string;
     aboutPic: Image;
     email: string;
     location: string;
@@ -40,16 +41,17 @@ export interface Categories extends SanityBody {
 }
 
 export interface Experience extends SanityBody {
-    _type: Experience;
+    _type: experience;
     companyName: string;
     dateStarted: date;
     jobTitle: string;
 }
 
 export interface Socials extends SanityBody {
-    _type: "socials";
+    _type: socials;
     title: string;
-    url: string;
+    link: string;
+    socialImg: Image;
 }
 
 export interface Skills extends SanityBody {
