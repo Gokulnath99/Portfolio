@@ -1,11 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import aboutpic from "../assets/about.jpg"
-import { bios } from '../assets/data';
+import { PageInfo } from "../typings";
+import { BiUser, BiPhone } from "react-icons/bi";
+import { AiOutlineMail } from "react-icons/ai";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo
+};
 
-function About({}: Props) {
+const About = ({ pageInfo }: Props) => {
+  const [_file, id, extension] = pageInfo.resume.asset._ref.split('-')
   return (
     <div className="container">
       <motion.div 
@@ -37,7 +42,7 @@ function About({}: Props) {
                 opacity: 1,
             }}
             viewport={{ once:true }}
-            src= {aboutpic.src}
+            src= {urlFor(pageInfo?.aboutPic).url()}
             alt="picture"
           />
         </motion.div>
@@ -47,16 +52,20 @@ function About({}: Props) {
           whileInView={{ x: [250, 0], opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae at rem, tenetur ad ipsa sequi, optio eius laudantium vero minus maxime laborum est et nemo consequatur nostrum distinctio sed, nulla doloribus officiis ea eligendi explicabo.</p>
-          {bios.map(bio => {
-            return (
-              <div className="bio" key={bio.id}>
-                <span className='bioKey'>{bio.icon}{bio.key}</span>
-                <span className='bioValue'>{bio.value}</span>
-              </div>
-            )
-          })}
-          <motion.a href='#' download=""
+          <p>{pageInfo.AboutPage}</p>
+          <div className="bio">
+            <span className='bioKey'><BiUser />Name</span>
+            <span className='bioValue'>{pageInfo?.myName}</span>
+          </div>
+          <div className="bio">
+            <span className='bioKey'><BiPhone />Phone</span>
+            <span className='bioValue'>{pageInfo?.phoneNumber}</span>
+          </div>
+          <div className="bio">
+            <span className='bioKey'><AiOutlineMail />Email</span>
+            <span className='bioValue'>{pageInfo?.email}</span>
+          </div>
+          <motion.a href={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${id}.${extension}?dl=${id}.${extension}`}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
           >

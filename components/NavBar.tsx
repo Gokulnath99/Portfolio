@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { animate, motion } from 'framer-motion';
 import { HiMenuAlt4, HiX } from "react-icons/hi";
-import { navLinks } from '../assets/data';
-import { socialIcons } from '../assets/data';
+import { SocialIcon } from 'react-social-icons';
 import Logo from './Logo';
 import { Socials } from '../typings';
 
@@ -10,6 +9,8 @@ import { Socials } from '../typings';
 type Props = {
     socials: Socials[]
 }
+
+const navLinks = ["home", "about", "skills", "portfolio", "contact"]
 
 const Navbar = ({ socials }: Props) => {
     
@@ -54,19 +55,21 @@ const Navbar = ({ socials }: Props) => {
           className={scroll ? "header active" : "header"}>
           <div className="Nav_container">
                 <Logo />
-                <ul
-                        className="nav_links"
-                    >
+                <ul className="nav_links">
                     {navLinks.map((navlink,index) => {
                         return <li key={index}><a href={`#${navlink}`}>{navlink}</a></li>
                     })}
                 </ul>
                 <div className="social_icons" >
-                    {socialIcons.map((socialIcon, index) => {
+                    {socials.map((social) => {
                     return (
-                        <div key={index}>
-                            {socialIcon}
-                        </div>
+                        <SocialIcon 
+                            key={social._id}
+                            url={social.link}
+                            fgColor="gray"
+                            bgColor='transparent'
+                        />
+                        
                     )
                 })}
                 </div>

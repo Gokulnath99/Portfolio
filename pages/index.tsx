@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import SkillExp from "../components/SkillExp";
@@ -15,8 +14,6 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchExperience } from "../utils/fetchExperience";
 import { fetchProjects } from "../utils/fetchPojects";
 
-const inter = Inter({ subsets: ["latin"] });
-
 type Props = {
   pageInfo: PageInfo;
   experience: Experience[];
@@ -29,29 +26,29 @@ export default function Home({pageInfo, experience, skills, projects, socials }:
   return (
     <div className="text-white h-screen z-0">
       <Head>
-        <title>Gokul's Portfolio</title>
+        <title>{pageInfo.myName} Portfolio</title>
       </Head>
 
       <Navbar socials={socials} />
 
       {/* Hero */}
       <section id="home">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
 
       {/* About */}
       <section id="about">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
 
       {/* Experience */}
       <section id="skills">
-        <SkillExp />
+        <SkillExp experiences={experience} skills={skills}/>
       </section>
 
       {/* project */}
       <section id="portfolio">
-        <Projects />
+        <Projects projects={projects}/>
       </section>
       
       {/* contact me */}

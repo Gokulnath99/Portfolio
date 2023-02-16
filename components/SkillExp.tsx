@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 import { motion } from "framer-motion";
-import { icons } from '../assets/data';
-import { experiences } from '../assets/data';
 import { finishes } from '../assets/data';
+import { Experience, Skills } from "../typings";
+import { urlFor } from '../sanity';
 
-type Props = {}
-function Experience({}: Props) {
+type Props = {
+  experiences: Experience[]
+  skills: Skills[]
+}
+
+function SkillExp({skills, experiences}: Props) {
   const [active, setActive] = useState(1)
+
   return (
     <div className="container" id="skillexp">
       <motion.div
@@ -35,12 +40,12 @@ function Experience({}: Props) {
         whileInView={{y: [-50, 0], opacity: 1}}
         className="skills"
       >
-        {active === 1 && icons.map((icon, index) => {
+        {active === 1 && skills.map(skill => {
           return (
-            <div key={index} className="tools" >
-              {icon}
+            <div key={skill._id} className="tools">
+              <img src={urlFor(skill?.skillImage).url()} alt={skill.skill}/>
             </div>
-          )
+          );
         })}
       </motion.div>
       <motion.div
@@ -50,11 +55,11 @@ function Experience({}: Props) {
       >
         {active === 2 && experiences.map(experience => {
           return (
-            <div className="experience" key={experience.id}>
-              <span>{experience.year}</span>
+            <div className="experience" key={experience._id}>
+              <span>{experience.dateStarted.split('-')[0]}</span>
               <div className="position">
-                <h3>{experience.position}</h3>
-                <p>{experience.company}</p>
+                <h3>{experience.jobTitle}</h3>
+                <p>{experience.companyName}</p>
               </div>
             </div>
           )
@@ -78,4 +83,4 @@ function Experience({}: Props) {
   )
 }
 
-export default Experience
+export default SkillExp
