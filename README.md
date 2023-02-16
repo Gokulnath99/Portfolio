@@ -1,3 +1,15 @@
+# My Portfolio website
+
+check it out 👉 link: https://potfolio-xi.vercel.app/
+
+![blog1](https://user-images.githubusercontent.com/41362808/219470868-57b38016-12b4-4627-abe1-3b15f5a1e609.png)
+
+![blog2](https://user-images.githubusercontent.com/41362808/219470879-0abdc796-14eb-415f-ade6-133ee7e1c9eb.png)
+
+![blog3](https://user-images.githubusercontent.com/41362808/219470834-2d23f0d3-9e37-45d9-9520-88b06fe21a01.png)
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
