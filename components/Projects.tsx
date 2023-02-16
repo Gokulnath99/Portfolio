@@ -89,7 +89,7 @@ const Projects = ({projects}: Props) => {
 >
   <div className="talk_left">
     <h3> So, lets talk about <br /> <span>your next projects</span></h3>
-  </div>
+  </div> 
   <motion.div
     whileHover={{scale: [1, 1.1]}}
     transition={{duration: 0.3}}

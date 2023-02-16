@@ -26,7 +26,7 @@ export default function Home({pageInfo, experience, skills, projects, socials }:
   return (
     <div className="text-white h-screen z-0">
       <Head>
-        <title>{pageInfo.myName} Portfolio</title>
+        <title>Gokul Portfolio</title>
       </Head>
 
       <Navbar socials={socials} />
